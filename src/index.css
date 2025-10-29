@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+@import url('tldraw/tldraw.css');
+/* @import '@tiptap-pro/extension-pages/style.css'; */
+
+body {
+	font-family: 'Inter', sans-serif;
+	overscroll-behavior: none;
+}
+
+.tl-theme__light {
+	--tl-color-background: black;
+	
+  }
+
+.tl-theme__dark {
+	--tl-color-background: black;
+}
