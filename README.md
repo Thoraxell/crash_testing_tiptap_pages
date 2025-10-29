@@ -34,3 +34,13 @@ Setting this option prevents the crash during testing. However, this workaround 
 
 ## Additional Context
 I think TLDraw uses an internal version of Tiptap, which is outdated. However, I'm using Tiptap for multiple different purposes in my main app, most of which include several packages for later versions and it doesn't crash when using those.
+
+## Environment Setup
+- **OS**: Windows 11
+- **Browser**: Google Chrome
+- **Package Manager**: pnpm (based on pnpm-lock.yaml)
+
+### Key Dependencies
+- TLDraw
+- Tiptap Core
+- Tiptap Pages Extension
