@@ -1,7 +1,7 @@
 
 # TLDraw Browser Tab Crash Issue
 
-A minimal reproduction of a browser tab crash issue in TLDraw when running locally.
+A minimal reproduction of a browser tab crash issue for running Tiptap Pages in TLDraw.
 
 ## Local Development
 
@@ -28,6 +28,9 @@ Setting this option prevents the crash during testing. However, this workaround 
 ### Steps to Reproduce
 1. Download packages and start local dev server
 2. Click the "Create new shape" button
-3. Interact with the document (move, write text, resize, etc.)
-4. Browser tab crashes (usually almost instantly, sometimes takes longer)
+3. Interact with the document (move, write text, resize, etc).
+4. Browser tab crashes (usually almost instantly, sometimes takes longer).
 
+
+## Additional Context
+I think TLDraw uses an internal version of Tiptap, which is outdated. However, I'm using Tiptap for multiple different purposes in my main app, most of which include several packages for later versions and it doesn't crash when using those.
