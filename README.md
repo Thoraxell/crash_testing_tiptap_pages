@@ -1,13 +1,9 @@
-<div alt style="text-align: center; transform: scale(.5);">
-	<picture>
-		<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tldraw/tldraw/main/assets/github-hero-dark.png" />
-		<img alt="tldraw" src="https://raw.githubusercontent.com/tldraw/tldraw/main/assets/github-hero-light.png" />
-	</picture>
-</div>
 
-This repo contains a template you can copy for using [tldraw](https://github.com/tldraw/tldraw) with the [Vite](https://vitejs.dev/) development environment.
+# TLDraw Browser Tab Crash Issue
 
-## Local development
+A minimal reproduction of a browser tab crash issue in TLDraw when running locally.
+
+## Local Development
 
 Install dependencies with `yarn` or `npm install`.
 
@@ -15,26 +11,23 @@ Run the development server with `yarn dev` or `npm run dev`.
 
 Open `http://localhost:5173/` in your browser to see the app.
 
-## License
+## Bug Report
 
-This project is provided under the MIT license found [here](https://github.com/tldraw/vite-template/blob/main/LICENSE.md). The tldraw SDK is provided under the [tldraw license](https://github.com/tldraw/tldraw/blob/main/LICENSE.md).
+### Issue
+The browser tab crashes almost instantly when running on localhost with no error message. The tab becomes unresponsive until closed. This issue appears to be specific to local development and may not occur (or occurs less frequently) when deployed to a real website.
 
-## Trademarks
+### Potential Cause/Solution
+After stripping down packages to create a minimal reproduction, I identified a potential fix:
 
-Copyright (c) 2024-present tldraw Inc. The tldraw name and logo are trademarks of tldraw. Please see our [trademark guidelines](https://github.com/tldraw/tldraw/blob/main/TRADEMARKS.md) for info on acceptable usage.
+```
+immediatelyRender: true
+```
 
-## Distributions
+Setting this option prevents the crash during testing. However, this workaround is not viable for the main application as it needs to be set to `false` for other package compatibility.
 
-You can find tldraw on npm [here](https://www.npmjs.com/package/@tldraw/tldraw?activeTab=versions).
+### Steps to Reproduce
+1. Download packages and start local dev server
+2. Click the "Create new shape" button
+3. Interact with the document (move, write text, resize, etc.)
+4. Browser tab crashes (usually almost instantly, sometimes takes longer)
 
-## Contribution
-
-Please see our [contributing guide](https://github.com/tldraw/tldraw/blob/main/CONTRIBUTING.md). Found a bug? Please [submit an issue](https://github.com/tldraw/tldraw/issues/new).
-
-## Community
-
-Have questions, comments or feedback? [Join our discord](https://discord.tldraw.com/?utm_source=github&utm_medium=readme&utm_campaign=sociallink). For the latest news and release notes, visit [tldraw.dev](https://tldraw.dev).
-
-## Contact
-
-Find us on Twitter/X at [@tldraw](https://twitter.com/tldraw).
